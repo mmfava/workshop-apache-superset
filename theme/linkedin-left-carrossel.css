@@ -1,0 +1,332 @@
+/* ----------------------------------------------------------------------------- 
+   @theme linkedin-left-carrossel
+   -----------------------------------------------------------------------------
+   Este tema foi projetado para apresentações no formato carrossel do LinkedIn.
+   Ele inclui ajustes de tipografia, layout e estilo para uma experiência visual
+   consistente e impactante.
+----------------------------------------------------------------------------- */
+
+/* ----------------------------------------------------------------------------- 
+   Importações de fontes e configurações globais
+----------------------------------------------------------------------------- */
+
+/* Importa o tema padrão do Marp */
+@import "default";
+
+/* Fonte Inter para tipografia padrão */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
+/* Fonte Montserrat para títulos */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@800&display=swap');
+
+/* Define a fonte padrão global */
+:root {
+  font-family: Helvetica, Inter, Arial;
+}
+
+
+/* ----------------------------------------------------------------------------- 
+   1. Configuração geral dos slides
+----------------------------------------------------------------------------- */
+
+/* Configura o alinhamento do último slide */
+section.last-slide {
+  text-align: left !important;
+  /* Garante alinhamento à esquerda */
+}
+
+/* Configuração do background para o post */
+section {
+  background-color: transparent;
+  background-image: url('https://github.com/mmfava/my-social-media-content/blob/main/theme/linkedin-design/1.png?raw=true');
+  background-repeat: no-repeat !important;
+  background-position: center center !important;
+  background-size: cover !important;
+  background-attachment: scroll !important;
+  width: 1200px;
+  height: 1500px;
+  aspect-ratio: 1 / 1;
+  /* Mantém proporção 1:1 */
+  margin: 0.25 auto;
+  overflow: hidden;
+}
+
+/* Ajusta imagens para garantir transparência em PNGs */
+img {
+  background: transparent !important;
+  /* Remove fundos aplicados */
+  padding-left: 20px;
+}
+
+/* ----------------------------------------------------------------------------- 
+   2. Tipografia e estilo textual
+----------------------------------------------------------------------------- */
+
+/* Títulos amarelos */
+h1,
+h2 {
+  color: #FFDB0C;
+  /* Cor amarela */
+  text-align: left;
+  padding-left: 35px;
+  padding-right: 35px;
+  font-family: "Montserrat", serif;
+}
+
+/* Títulos brancos */
+h3,
+h4,
+h5,
+h6 {
+  color: #FFFFFF;
+  /* Branco */
+  text-align: left;
+  padding-left: 35px;
+  padding-right: 35px;
+}
+
+/* Texto geral em branco */
+p,
+ul,
+ol,
+li,
+footer,
+header,
+blockquote,
+span {
+  color: #FFFFFF;
+  /* Branco */
+  text-align: left;
+}
+
+/* Ajuste para bullet points */
+ul {
+  padding-left: 75px;
+  /* Aumenta o espaçamento interno para a margem */
+  margin-left: 5px;
+  /* Adiciona margem extra à esquerda */
+  list-style-type: disc;
+  /* Bullet padrão */
+  list-style-position: outside;
+  /* Bullet fora do texto */
+}
+
+li {
+  padding: 0px 0;
+  padding-left: 1.2px;
+  /*  Aumenta o espaçamento interno para a margem */
+  margin-left: 5px;
+  /* Adiciona margem extra à esquerda */
+  font-size: 1.5rem;
+  /* Tamanho da fonte dos itens */
+}
+
+/* Ajuste para listas numéricas */
+ol {
+  padding-left: 75px;
+  /* Aumenta o espaçamento interno para a margem */
+  margin-left: 5px;
+  /* Adiciona margem extra à esquerda */
+  list-style-type: decimal;
+  /* Define o estilo dos números */
+  list-style-position: outside;
+  /* Número fora do bloco de texto */
+}
+
+ol li {
+  padding: 0px 0;
+  /* Espaçamento entre os itens */
+  font-size: 1.5rem;
+  /* Ajusta o tamanho da fonte dos itens */
+  color: #FFFFFF;
+  /* Cor do texto */
+}
+
+/* Personaliza o número (opcional) */
+ol li::marker {
+  font-size: 1.5rem;
+  /* Ajusta o tamanho do número */
+  color: #FFDB0C;
+  /* Define a cor do número */
+  font-weight: bold;
+  /* Deixa o número em negrito */
+}
+
+
+ul li {
+  padding: 0px 0;
+  /* Espaçamento entre os itens */
+  font-size: 1.5rem;
+  /* Ajusta o tamanho da fonte dos itens */
+  color: #FFFFFF;
+  /* Cor do texto */
+}
+
+/* Ajuste para notas */
+p {
+  padding-left: 40px;
+  padding-right: 35px;
+  /* Espaçamento interno para alinhar com o texto principal */
+  margin-left: 5px;
+  /* Adiciona margem extra */
+  font-size: 2rem;
+  /* Tamanho do texto */
+}
+
+/* Tamanhos dos títulos */
+h1 {
+  font-size: 4rem;
+}
+
+h2 {
+  font-size: 3.4rem;
+}
+
+h3 {
+  font-size: 3rem;
+}
+
+.backgroundh1 {
+  background-color: #FFDB0C;
+  /* Fundo amarelo */
+  font-size: 4rem;
+  font-family: "Montserrat", serif;
+  color: #7600dc;
+  /* Texto roxo */
+  font-weight: bold;
+  margin: 10px;
+}
+
+
+/* Links em branco com sublinhado */
+a {
+  color: #FFFFFF;
+  /* Branco */
+  text-decoration: underline;
+}
+
+/* Texto em negrito */
+strong {
+  color: #FFFFFF;
+  /* Branco */
+}
+
+/* Texto destacado (marcado) */
+mark {
+  background-color: #FFDB0C;
+  /* Fundo amarelo */
+  color: #7600dc;
+  /* Texto roxo */
+  font-weight: bold;
+  font-family: Helvetica, sans-serif;
+}
+
+/* Estilo para código */
+code {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #FFFFFF;
+  /* Branco */
+}
+
+pre {
+  background-color: #ffffffad;
+  color: #FFFFFF;
+  /* Branco */
+}
+
+footer {
+  font-size: 1rem;
+  ;
+}
+
+/* ----------------------------------------------------------------------------- 
+   3. Paginação e alinhamentos específicos
+----------------------------------------------------------------------------- */
+
+/* Paginação automática */
+section::after {
+  font-size: 1em;
+  color: #FFFFFF;
+  /* Branco */
+  content: attr(data-marpit-pagination) ' / ' attr(data-marpit-pagination-total);
+}
+
+/* Centralizar imagens com a classe "center" */
+img[alt~="center"] {
+  display: block;
+  margin: 0 auto;
+}
+
+/* Texto pequeno */
+section.tinytext>p,
+section.tinytext>ul,
+section.tinytext>blockquote {
+  font-size: 0.65em;
+  color: #FFFFFF;
+  /* Branco */
+}
+
+/* ----------------------------------------------------------------------------- 
+   4. Slide final (call to action)
+----------------------------------------------------------------------------- */
+
+/* Ajuste de imagem (bonequinho) */
+.bonequinho {
+  width: 700px;
+  height: auto;
+  position: absolute;
+  top: 14%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Texto principal (exemplo: GOSTOU DO CONTEÚDO?) */
+.texto-principal {
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  color: #FFFFFF;
+  /* Branco */
+  margin-top: 200px;
+}
+
+/* Ícones de interação */
+.icones {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 30px;
+  font-size: 0.15rem;
+  color: #FFFFFF;
+  /* Branco */
+}
+
+/* Estilo individual para ícones */
+.icones div {
+  text-align: center;
+}
+
+.icones h {
+  font-size: 2rem;
+  margin-bottom: 2px;
+  line-height: 1;
+}
+
+.icones p {
+  font-size: 1rem;
+  margin-top: 2px;
+  line-height: 1.2;
+}
+
+/* Linha divisória */
+.linha {
+  width: 70%;
+  height: 3px;
+  background-color: #FFDB0C;
+  /* Amarelo */
+  margin: 30px auto;
+}
+
+/* ----------------------------------------------------------------------------- 
+   Fim do arquivo CSS
+----------------------------------------------------------------------------- */

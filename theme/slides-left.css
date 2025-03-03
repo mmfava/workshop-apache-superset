@@ -1,0 +1,502 @@
+/* -----------------------------------------------------------------------------
+   @theme slides-left
+----------------------------------------------------------------------------- */
+
+/* || Importações e Fonte Padrão */
+@import "default";
+/* Importa o tema padrão */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+/* Fonte Inter */
+
+/* Define a fonte global */
+:root {
+  font-family: Inter, Helvetica, Arial;
+}
+
+/* || Fontawesome */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css');
+
+
+/* -----------------------------------------------------------------------------
+   1. CONFIGURAÇÃO GERAL DOS SLIDES
+----------------------------------------------------------------------------- */
+
+/* || Alinhamento do Último Slide */
+section.last-slide {
+  text-align: left !important;
+  /* Força o alinhamento à esquerda */
+}
+
+section.first-slide {
+  background-image: url('https://github.com/mmfava/my-social-media-content/blob/feature/slide-template/theme/slides-design/1.png?raw=true');
+}
+
+/* || Configuração do Background para Instagram Post */
+section {
+  background-color: transparent;
+  background-image: url('https://github.com/mmfava/my-social-media-content/blob/feature/slide-template/theme/slides-design/2.png?raw=true');
+  background-repeat: no-repeat !important;
+  background-position: center center !important;
+  background-size: cover !important;
+  background-attachment: scroll !important;
+  width: 1920px;
+  height: 1080px;
+  aspect-ratio: 1 / 1;
+  /* Mantém a proporção 1:1 */
+  margin: 0.25 auto;
+  overflow: hidden;
+}
+
+/* || Garantir Transparência em Imagens PNG */
+img {
+  background: transparent !important;
+  /* Remove qualquer fundo aplicado */
+}
+
+/* -----------------------------------------------------------------------------
+   2. TIPOGRAFIA
+----------------------------------------------------------------------------- */
+
+/* || Títulos Amarelos */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #470082;
+  /* Cor amarela */
+  text-align: left;
+  padding-left: 60px;
+  padding-right: 60px;
+}
+
+/* || Textos Brancos Gerais */
+p,
+ul,
+ol,
+li,
+blockquote,
+span {
+  color: #000000;
+  /* Cor branca */
+  text-align: left;
+  padding-left: 60px;
+  padding-right: 60px;
+}
+
+footer,
+header {
+  color: #ffffff;
+  /* Cor branca */
+  text-align: left;
+  padding-left: 60px;
+  padding-right: 60px;
+}
+
+header {
+  padding-top: 20px;
+}
+
+footer {
+  padding-bottom: 10px;
+}
+
+/* || Tamanho dos Títulos */
+h1 {
+  font-size: 3.6rem;
+}
+
+h2 {
+  font-size: 3.0rem;
+}
+
+h3 {
+  font-size: 2.6rem;
+}
+
+/* || Tamanho do Parágrafo */
+p {
+  font-size: 1.3rem;
+}
+
+/* || Links Brancos */
+a {
+  color: #8800a3;
+  /* Branco */
+  text-decoration: underline;
+  /* Mantém os links sublinhados */
+}
+
+/* || Texto em Negrito */
+strong {
+  color: #000000;
+  /* Branco */
+}
+
+/* || Texto Marcado */
+mark {
+  background-color: #FFDB0C;
+  /* Fundo amarelo */
+  color: #470082;
+  /* Texto roxo */
+  font-weight: bold;
+  /* Negrito */
+}
+
+/* || Estilo para Blocos de Código */
+pre {
+  background-color: #ffffff;
+  /* Fundo escuro */
+  color: #000000;
+  /* Texto claro */
+  font-size: 1.1rem;
+  padding: 10px 20px;
+  /* Espaçamento interno */
+  margin: 20px 60px;
+  /* Margem superior/inferior e nas laterais */
+  border-radius: 8px;
+  /* Bordas arredondadas */
+  overflow-x: auto;
+  /* Rolagem horizontal */
+  white-space: pre-wrap;
+  /* Quebra de linha se necessário */
+  line-height: 1.5;
+  /* Espaçamento entre linhas */
+  border: 1px solid #3c3c3c;
+  /* Borda sutil */
+  max-width: calc(100% - 120px);
+  /* Limita a largura máxima ao tamanho da seção, com margens */
+  box-sizing: border-box;
+  /* Garante que padding e borda não aumentem a largura total */
+  text-align: left;
+  /* Alinhamento do texto à esquerda */
+  font-weight: bold;
+}
+
+/* Estilo para Código Inline */
+code {
+  background-color: #2d2d2d;
+  color: #000000;
+  font-family: 'Courier New', Courier, monospace;
+  padding: 2em;
+  border-radius: 1px;
+  font-size: 0.9rem;
+}
+
+span.small {
+  font-size: smaller;
+}
+
+section.first-slide h1 {
+  color: #fff700;
+  /* Cor amarela */
+  text-align: center;
+  padding-left: 60px;
+  padding-right: 60px;
+}
+
+section.first-slide h2,
+section.first-slide h3,
+section.first-slide h4 {
+  color: #fff700;
+  /* Cor amarela */
+  text-align: center;
+  padding-left: 60px;
+  padding-right: 60px;
+}
+
+section.first-slide p {
+  color: #ffffff;
+  text-align: center;
+  padding-left: 60px;
+  padding-right: 60px;
+  font-size: 1.5rem;
+}
+
+section.first-slide strong {
+  color: #ffffff;
+  text-align: center;
+  padding-left: 60px;
+  padding-right: 60px;
+}
+
+section.first-slide small {
+  font-size: 1.1rem;
+}
+
+
+/* -----------------------------------------------------------------------------
+   3. PAGINAÇÃO E ALINHAMENTOS ESPECÍFICOS
+----------------------------------------------------------------------------- */
+/* || Paginação Automática */
+section::after {
+  font-size: 0.75em;
+  color: #FFFFFF;
+  /* Branco */
+  content: attr(data-marpit-pagination) ' / ' attr(data-marpit-pagination-total);
+  padding-bottom: 10px;
+}
+
+/* || Centralizar Imagens */
+img[alt~="center"] {
+  display: block;
+  margin: 0 auto;
+}
+
+/* || Texto Pequeno */
+section.tinytext>p,
+section.tinytext>ul,
+section.tinytext>blockquote {
+  font-size: 0.65em;
+  color: #000000;
+  /* Branco */
+}
+
+
+/* ----------------------------------------------------------------------------- 
+   4. SLIDE FINAL (CALL TO ACTION)
+----------------------------------------------------------------------------- */
+
+/* || Texto Principal (Obrigada!) */
+.texto-principal {
+  font-size: 3.5rem;
+  /* Maior destaque */
+  font-weight: bold;
+  text-align: center;
+  color: #470082;
+  /* Amarelo */
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+/* || Linha Divisória */
+.linha {
+  width: 50%;
+  height: 3px;
+  background-color: #f1ce08;
+  /* Amarelo */
+  margin: 20px auto;
+}
+
+/* || Contêiner de Redes Sociais */
+.redes-sociais {
+  display: flex;
+  justify-content: center;
+  /* Centraliza os itens */
+  gap: 30px;
+  /* Espaçamento entre ícones */
+  align-items: center;
+  margin-top: 20px;
+}
+
+/* || Estilo dos Ícones de Redes Sociais */
+.redes-sociais a {
+  text-decoration: none;
+  color: #000000;
+  /* Ícones brancos */
+  font-size: 1.1rem;
+  /* Tamanho adequado */
+  transition: color 0.3s ease;
+  /* Efeito hover suave */
+}
+
+/* || Hover nos Ícones */
+.redes-sociais a:hover {
+  color: #470082;
+  /* Amarelo no hover */
+}
+
+/* || Texto de Contato */
+.contato {
+  text-align: center;
+  font-size: 1.5rem;
+  color: #000000;
+  margin-top: 30px;
+}
+
+/* -----------------------------------------------------------------------------
+   Aparecer lista progressivamente
+----------------------------------------------------------------------------- */
+/* * {
+  scrollbar-color: theme('colors.gray.500') theme('colors.gray.300');
+  scrollbar-width: thin;
+}
+
+*::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+*::-webkit-scrollbar-track {
+  @apply bg-gray-300;
+}
+
+*::-webkit-scrollbar-thumb {
+  @apply rounded-full bg-gray-500 bg-clip-padding;
+
+  border: 1px solid transparent;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  @apply bg-gray-600;
+}
+
+*::-webkit-scrollbar-thumb:hover:active {
+  @apply bg-gray-700;
+}
+
+html:not(.translating) {
+  scroll-behavior: smooth;
+} */
+.two-column {
+  columns: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.left {
+  flex: 1;
+  padding-right: 20px;
+}
+
+.right {
+  flex: 1;
+  text-align: right;
+}
+
+.right img {
+  max-width: 100%;
+  height: auto;
+}
+
+
+/* -----------------------------------------------------------------------------
+----------------------------------------------------------------------------- */
+
+.two-column {
+  display: block;
+  column-count: 2;
+  break-inside: avoid;
+  orphans: 5;
+  widows: 5;
+  scroll-snap-type: x mandatory;
+  scroll-padding-left: 50%;
+}
+
+.two-column p {
+  scroll-snap-align: center;
+}
+
+
+/* -----------------------------------------------------------------------------
+   FIM DO ARQUIVO CSS
+----------------------------------------------------------------------------- */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Helvetica, sans-serif;
+}
+
+/* Timeline container */
+.timeline {
+  position: relative;
+  max-width: 1000px;
+  /* Ajustado para caber no slide */
+  margin: 0 auto;
+  padding: 10px 0;
+}
+
+/* Vertical timeline line */
+.timeline::after {
+  content: '';
+  position: absolute;
+  width: 8px;
+  background-color: #350c6b;
+  /* Roxo */
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -2px;
+}
+
+/* Container around content */
+.container {
+  padding: 10px 30px;
+  position: relative;
+  background-color: inherit;
+  width: 60%;
+}
+
+/* Circles on the timeline */
+.container::after {
+  content: '';
+  position: absolute;
+  width: 15px;
+  /* Reduzido para caber melhor */
+  height: 15px;
+  right: -8px;
+  background-color: #350c6b;
+  /* Roxo */
+  border: 3px solid white;
+  top: 15px;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+/* Left and right containers */
+.left {
+  left: 0;
+}
+
+.right {
+  left: 50%;
+}
+
+/* Content boxes */
+.content {
+  padding: 12px 20px;
+  background-color: #350c6b;
+  /* Fundo Roxo */
+  color: white;
+  /* Texto Branco */
+  border-radius: 5px;
+  font-size: 14px;
+  /* Tamanho de fonte reduzido */
+  text-align: center;
+  /* Centraliza o texto */
+}
+
+/* Remove headers from inside boxes */
+.content h3 {
+  display: none;
+}
+
+/* Make timeline responsive */
+@media screen and (max-width: 600px) {
+  .timeline::after {
+    left: 30px;
+  }
+
+  .container {
+    width: 100%;
+    padding-left: 50px;
+    padding-right: 20px;
+  }
+
+  .container::before {
+    left: 40px;
+  }
+
+  .left::after,
+  .right::after {
+    left: 10px;
+  }
+
+  .right {
+    left: 0%;
+  }
+}

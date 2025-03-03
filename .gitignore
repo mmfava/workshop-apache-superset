@@ -173,3 +173,6 @@ cython_debug/
 
 .obsidian
 /.obsidian
+.smtcmp_vector_db.tar.gz
+.smtcmp_chat_histories/85f79b0c-1aa7-44f7-a0d3-8d72585588ff.json
+.smtcmp_chat_histories/chat_list.json

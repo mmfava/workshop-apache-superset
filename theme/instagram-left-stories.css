@@ -1,0 +1,274 @@
+/* -----------------------------------------------------------------------------
+   @theme instagram-left-stories
+   Tema para slides/carrosséis no Marp, otimizado para postagens no Instagram.
+----------------------------------------------------------------------------- */
+
+/* || Importações e Fonte Padrão */
+@import "default";
+/* Importa o tema padrão */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+/* Fonte Inter */
+
+/* Define a fonte global */
+:root {
+  font-family: Inter, Helvetica, Arial;
+}
+
+/* -----------------------------------------------------------------------------
+   1. CONFIGURAÇÃO GERAL DOS SLIDES
+----------------------------------------------------------------------------- */
+
+/* || Alinhamento do Último Slide */
+section.last-slide {
+  text-align: center !important;
+  /* Força o alinhamento à esquerda */
+}
+
+/* || Configuração do Background para Instagram Post */
+section {
+  background-color: transparent;
+  background-image: url('https://github.com/mmfava/my-social-media-content/blob/feature/template-instagram/theme/insta-stories-design/1.png?raw=true');
+  background-repeat: no-repeat !important;
+  background-position: center center !important;
+  background-size: cover !important;
+  background-attachment: scroll !important;
+  width: 1080px;
+  height: 1920px;
+  aspect-ratio: 1 / 1;
+  margin: 0.25 auto;
+  overflow: hidden;
+}
+
+/* || Garantir Transparência em Imagens PNG */
+img {
+  background: transparent !important;
+  /* Remove qualquer fundo aplicado */
+}
+
+/* -----------------------------------------------------------------------------
+   2. TIPOGRAFIA
+----------------------------------------------------------------------------- */
+
+/* || Títulos Amarelos */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-align: center;
+  padding-left: 20px;
+  padding-right: 20px;
+  top: 16%;
+  /* Posição a partir do topo */
+  left: 50%;
+}
+
+/* || Textos Brancos Gerais */
+p,
+ul,
+ol,
+li,
+footer,
+header,
+blockquote,
+span {
+  color: #FFFFFF;
+  /* Cor branca */
+  text-align: center;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+/* || Tamanho dos Títulos para Stories */
+h1 {
+  font-size: 4rem;
+  /* Reduzido para Stories */
+  text-align: center;
+  margin-top: 20px;
+  color: #FFDB0C;
+  /* Cor amarela */
+}
+
+h2 {
+  font-size: 3.5rem;
+  text-align: center;
+  margin-top: 20px;
+  color: #FFDB0C;
+  /* Cor amarela */
+}
+
+h3,
+h4,
+h5 {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-top: 20px;
+  color: #ffffff;
+  /* Cor amarela */
+}
+
+/* || Tamanho do Parágrafo */
+p {
+  font-size: 2rem;
+}
+
+/* || Links Brancos */
+a {
+  color: #FFFFFF;
+  /* Branco */
+  text-decoration: underline;
+  /* Mantém os links sublinhados */
+}
+
+/* || Texto em Negrito */
+strong {
+  color: #ffffff;
+  /* Branco */
+}
+
+/* || Texto Marcado */
+mark {
+  background-color: #FFDB0C;
+  /* Fundo amarelo */
+  color: #7600dc;
+  /* Texto roxo */
+  font-weight: bold;
+  /* Negrito */
+}
+
+/* || Códigos */
+code {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #FFFFFF;
+  /* Branco */
+}
+
+pre {
+  background-color: #ffffffad;
+  color: #FFFFFF;
+  /* Branco */
+}
+
+/* || Call-to-Action */
+.cta-text {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+  color: #FFDB0C;
+  /* Cor Amarela para destaque */
+  margin-top: 30px;
+  text-transform: uppercase;
+  /* Deixa o texto em caixa alta */
+}
+
+footer {
+  text-align: center;
+  font-size: 1rem;
+}
+
+/* -----------------------------------------------------------------------------
+   3. PAGINAÇÃO E ALINHAMENTOS ESPECÍFICOS
+----------------------------------------------------------------------------- */
+
+/* || Paginação Automática */
+section::after {
+  font-size: 1em;
+  color: #FFFFFF;
+  /* Branco */
+  content: attr(data-marpit-pagination) '/' attr(data-marpit-pagination-total);
+}
+
+/* || Centralizar Imagens */
+img[alt~="center"] {
+  display: block;
+  margin: 0 auto;
+}
+
+/* || Texto Pequeno */
+section.tinytext>p,
+section.tinytext>ul,
+section.tinytext>blockquote {
+  font-size: 0.65em;
+  color: #FFFFFF;
+  /* Branco */
+}
+
+/* -----------------------------------------------------------------------------
+   4. SLIDE FINAL (CALL TO ACTION)
+----------------------------------------------------------------------------- */
+
+/* || Ajuste da imagem (bonequinho) */
+.bonequinho {
+  width: 500px;
+  /* Tamanho da imagem */
+  height: auto;
+  position: absolute;
+  top: 16%;
+  /* Posição a partir do topo */
+  left: 50%;
+  /* Centraliza horizontalmente */
+  transform: translateX(-50%);
+}
+
+/* || Texto Principal (Ex: GOSTOU DO CONTEÚDO?) */
+.texto-principal {
+  font-size: 1.7rem;
+  font-weight: bold;
+  text-align: center;
+  color: #FFFFFF;
+  /* Branco */
+  margin-top: 150px;
+}
+
+/* || Ícones de Interação */
+.icones {
+  display: flex;
+  justify-content: space-around;
+  /* Distribui uniformemente os ícones */
+  align-items: center;
+  margin-top: 15px;
+  font-size: 0.1rem;
+  color: #FFFFFF;
+  /* Branco */
+}
+
+/* || Estilo Individual para Ícones */
+.icones div {
+  text-align: center;
+}
+
+/* Ícones (Ex: Coração, Balão de Comentário, etc.) */
+.icones h {
+  font-size: 1.5rem;
+  margin-bottom: 2px;
+  /* Espaçamento reduzido entre ícone e texto */
+  line-height: 1;
+  /* Reduz altura de linha */
+}
+
+/* Textos abaixo dos Ícones */
+.icones p {
+  font-size: 0.75rem;
+  margin-top: 2px;
+  /* Espaço reduzido acima do texto */
+  line-height: 1.2;
+  /* Altura de linha ajustada */
+}
+
+/* || Linha Divisória */
+.linha {
+  width: 70%;
+  /* Comprimento da linha */
+  height: 3px;
+  /* Espessura */
+  background-color: #FFDB0C;
+  /* Cor amarela */
+  margin: 30px auto;
+  /* Espaçamento acima/abaixo */
+}
+
+
+/* -----------------------------------------------------------------------------
+   FIM DO ARQUIVO CSS
+----------------------------------------------------------------------------- */
