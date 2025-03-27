@@ -1,19 +1,19 @@
 
 # 📘Tutorial de Instalação
 
-Este guia foi elaborado para auxiliar usuários de todos os níveis a instalar o Apache Superset em sistemas Linux utilizando Docker. Para usuários Windows, recomenda-se o uso do **WSL** (*Windows Subsystem for Linux*) – veja as instruções em [WSL Windows](2-WSL.md).
+* Guia para instalação do Apache Superset em sistemas Linux utilizando Docker Compose. 
+* Para usuários Windows, recomenda-se o uso do **WSL** (*Windows Subsystem for Linux*) – veja as instruções em [WSL Windows](2-WSL.md).
+* Para usuários macOS, consultar a página [3-macOS.md](3-macOS.md).
 
 > **Importante:**  
-> - Execute os comandos na ordem apresentada no terminal.
-> - Este tutorial utiliza Docker para simplificar a instalação, mas se você preferir instalar de outra forma, consulte a [documentação oficial do Superset](https://superset.apache.org/docs/installation).
+> - Execute os comandos no terminal e na ordem que são apresentados. 
+> - Este tutorial utiliza Docker para simplificar a instalação, mas existem outros meios, consulte a [documentação oficial do Superset](https://superset.apache.org/docs/installation) para entendê-los. 
 
 ---
 
 ## 1. Pré-requisitos
 
 ### 1.1 Docker e Docker Compose
-
-Utilizaremos o Docker para isolar a instalação do Superset. Siga estes passos para instalar o Docker e o Docker Compose a partir dos repositórios oficiais do Ubuntu:
 
 1. **Atualize os repositórios e instale dependências:**
 
@@ -49,9 +49,9 @@ sudo apt install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin d
 sudo usermod -aG docker $USER
 ```
 
-   > ⚠️ **Atenção:** Após executar este comando, reinicie sua sessão (logout/login ou reinicie o sistema) para que as permissões entrem em vigor.
+⚠️ **Atenção:** Após executar este comando, reinicie sua sessão (logout/login ou reinicie o sistema) para que as permissões entrem em vigor.
 
-> **Dica:** Caso prefira uma instalação gráfica, você pode optar pelo [Docker Desktop](https://docs.docker.com/desktop/).
+ > **Dica:** Caso prefira uma instalação gráfica, você pode optar pelo [Docker Desktop](https://docs.docker.com/desktop/).
 
 ### 1.2 Git
 
@@ -61,7 +61,7 @@ O Git será utilizado para clonar o repositório oficial do Superset. Instale-o 
 sudo apt install git
 ```
 
-> ⚠️ **Alternativa:** Baixe o Git pelo instalador em [git-scm.com](https://git-scm.com/downloads) se preferir.
+> ⚠️ **Alternativa:** Baixe o Git em [git-scm.com](https://git-scm.com/downloads) se preferir.
 
 ---
 
@@ -78,20 +78,20 @@ cd superset
 
 ## 3. Ajustando a Versão do PostgreSQL
 
-Por padrão, o arquivo `docker-compose.yml` pode estar configurado para utilizar a imagem `postgres:16`. Para garantir compatibilidade, a linha para `postgres:15` com a execução do comando:
+Por padrão, o arquivo `docker-compose.yml` está configurado para utilizar a imagem `postgres:16`. Para garantir compatibilidade com a versão do Apache Superset, substitua por `postgres:15`. Para isso, executar o comando: 
 
 ```bash
 sed -i 's/postgres:16/postgres:15/' docker-compose.yml
 ```
 
 > **Por que fazer isso?**  
-> Algumas versões podem apresentar incompatibilidades. Essa alteração ajuda a evitar problemas durante a inicialização dos containers.
+> 🐞 Algumas versões podem apresentar incompatibilidades. Essa alteração ajuda a evitar problemas durante a inicialização dos containers.
 
 ---
 
 ## 4. Adicionando Suporte a Fontes de Dados Externas
 
-Para conectar o Superset ao Google BigQuery (ou a outra fonte de dados), adicione a biblioteca "sqlalchemy-bigquery" nos *requirements* da ferramenta:
+Para conectar o Superset ao Google BigQuery (ou a outra fonte de dados), adicione a biblioteca "sqlalchemy-bigquery" nos *requirements* da ferramenta executando o comando:
 
 ```bash
 echo "sqlalchemy-bigquery" | sudo tee -a ./docker/requirements-local.txt
@@ -105,8 +105,6 @@ echo "sqlalchemy-bigquery" | sudo tee -a ./docker/requirements-local.txt
 
 ### 5.1 Construindo os Containers
 
-No diretório do repositório, construa as imagens Docker:
-
 ```bash
 docker compose build
 ```
@@ -114,8 +112,6 @@ docker compose build
 > **Dica:** Esse processo pode demorar alguns minutos, dependendo do seu sistema e conexão de internet.
 
 ### 5.2 Subindo os Containers
-
-Após a construção, inicie os containers com:
 
 ```bash
 docker compose up 
@@ -170,7 +166,6 @@ Caso encontre dificuldades durante a instalação, siga estes passos:
    ```
 
 4. **Recursos do Sistema:**
-
    - Certifique-se de ter pelo menos **4GB de RAM**.
    - Verifique se o Docker está rodando corretamente:
 
@@ -182,7 +177,7 @@ Caso encontre dificuldades durante a instalação, siga estes passos:
 
 Para seguir com o curso sem precisar esquentar a cabeça com instalações, você pode criar uma conta na plataforma [Preset](https://preset.io/), que oferece uma solução hospedada e gerenciada do Apache Superset! 
 
-> Com o Preset, você tem acesso imediato a um ambiente configurado e otimizado para a criação de dashboards, sem a necessidade de lidar com a instalação, configuração ou manutenção da infraestrutura. O melhor é que para um único usuário ela é grátis 🤩.
+> Com o Preset, você tem acesso imediato a um ambiente configurado e otimizado para a criação de dashboards, sem a necessidade de lidar com a instalação, configuração ou manutenção da infraestrutura. E para um único usuário ela é gratuita🤩.
 
 ---
 
