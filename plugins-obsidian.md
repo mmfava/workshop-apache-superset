@@ -27,7 +27,6 @@ updated: 2025-03-22T20:17
 |[**Paste image rename**](https://obsidian.md/plugins?id=obsidian-paste-image-rename) [⬇️](obsidian://SP-install?id=obsidian-paste-image-rename&enable=true)|[Reorx](https://github.com/reorx)|1.6.1|Rename pasted images and all the other attchments ...|
 |[**Smart Composer**](https://obsidian.md/plugins?id=smart-composer) [⬇️](obsidian://SP-install?id=smart-composer&enable=true)|[Heesu Suh](https://github.com/glowingjade) [♡](https://buymeacoffee.com/glowingjade)|1.0.12|AI chat with note context, smart writing assistanc...|
 |[**Consistent Attachments and Links**](https://obsidian.md/plugins?id=consistent-attachments-and-links) [⬇️](obsidian://SP-install?id=consistent-attachments-and-links&enable=true)|[Dmitry Savosh](https://github.com/dy-sh/) [♡](https://www.buymeacoffee.com/mnaoumov)|3.24.1|This plugin ensures the consistency of attachments...|
-|[**Update Time**](https://obsidian.md/plugins?id=update-time) [⬇️](obsidian://SP-install?id=update-time&enable=true)|[Sébastien Dubois](https://dsebastien.net) [♡](https://www.buymeacoffee.com/dsebastien)|1.0.13|Automatically update front matter to include...|
 |[**Dataview Serializer**](https://obsidian.md/plugins?id=dataview-serializer) [⬇️](obsidian://SP-install?id=dataview-serializer&enable=true)|[Sébastien Dubois](https://dsebastien.net) [♡](https://www.buymeacoffee.com/dsebastien)|1.5.1|Serialize Dataview queries to Markdown, and...|
 |[**OZ Calendar**](https://obsidian.md/plugins?id=oz-calendar) [⬇️](obsidian://SP-install?id=oz-calendar&enable=true)|[Ozan Tellioglu](https://www.ozan.pl) [♡](https://ko-fi.com/ozante)|0.3.4|View your notes in Calendar using any YAML...|
 |[**vConsole**](https://obsidian.md/plugins?id=vconsole) [⬇️](obsidian://SP-install?id=vconsole&enable=true)|[Zhou Hua](https://zhouhua.site)|1.0.2|Integrate vConsole for developers to facilitate...|
@@ -36,6 +35,8 @@ updated: 2025-03-22T20:17
 |[**Share my plugin list**](https://obsidian.md/plugins?id=share-my-plugin-list) [⬇️](obsidian://SP-install?id=share-my-plugin-list&enable=true)|[Benature](https://github.com/Benature) [☕️](https://www.buymeacoffee.com/benature)/[⚡️](https://afdian.net/a/Benature-K)/[♡](https://s2.loli.net/2024/01/30/jQ9fTSyBxvXRoOM.png)|0.3.3|Share the enabled plugins in list/table format.|
 |[**Homepage**](https://obsidian.md/plugins?id=homepage) [⬇️](obsidian://SP-install?id=homepage&enable=true)|[novov](https://novov.me) [♡](https://ko-fi.com/novov)|4.0.7|Open a specified note, canvas, or workspace...|
 |[**Emoji Magic**](https://obsidian.md/plugins?id=emoji-magic) [⬇️](obsidian://SP-install?id=emoji-magic&enable=true)|[simplgy](https://github.com/simplgy)|0.2.2|Easily add emoji, with a powerful keyword...|
+|[**Scholar**](https://obsidian.md/plugins?id=scholar) [⬇️](obsidian://SP-install?id=scholar&enable=true)|[Shannon Shen](https://www.szj.io)|1.4.0|Streamline Research Workflow in Obsidian|
+|[**Magic Mic**](https://obsidian.md/plugins?id=magic-mic) [⬇️](obsidian://SP-install?id=magic-mic&enable=true)|[Drew McDonald](https://github.com/drewmcdonald)|1.0.5|Record, transcribe, and summarize audio directly...|
 
 
 <!-- ShareMyPlugin end -->
