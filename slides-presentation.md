@@ -10,7 +10,7 @@ center: teste
 date: ""
 link: 
 created: 2025-01-03T11:37
-updated: 2025-03-03T17:19
+updated: 2025-03-26T21:08
 ---
 <!-- _class: first-slide -->
 
@@ -25,7 +25,7 @@ updated: 2025-03-03T17:19
 
 ![bg right:33% width:500px](figs/me.png)
 
-🧠 Cientista de Dados | MSc | PhD
+🧠 Desenvolvedora de IA | MSc | PhD
 
 🐍 Python & Comunidades  
 
@@ -37,21 +37,30 @@ updated: 2025-03-03T17:19
 
 <small>🔗 github: [/mmfava](https://github.com/mmfava)</small>
 
+<small>🔗 site: [www.mariliafavalesso.com](https://github.com/mmfava)</small>
+
+---
+<!-- _class: first-slide -->
+![bg](theme/slides-design/12.png)
+
+# "*Superseter by heart*"
+<div class="linha"></div><br>
+
+Entusiasta de ferramentas Open-Source 💙
+
 ---
 
 ## Agenda
-
 
 <div style="display:grid;grid-template-columns:1fr 1fr">
 <div>
 <p>
 
-1. Introdução (O que é Superset, vantagens, casos de uso, história)
-2. Implantação e Configuração
-3. Conectando Bancos de Dados
-4. Criando Datasets
-5. Criando Gráficos e Dashboards
-
+1. Overview  
+2. Arquitetura   
+3. Back-end  
+4. Interface e Front-end  
+5. SQL Lab 
 
 </p>
 </div>
@@ -59,19 +68,16 @@ updated: 2025-03-03T17:19
 <div>
 <p>
 
-6. Publicação e compartilhamento de visualizações
-7. SQL Lab e Consultas Avançadas
-8. Agendamento de Relatórios e Alertas
-9. Segurança e Controle de Acesso
-10. Personalização e API
-
+6. Datasets
+7. Charts 
+8. Dashboards e Filtros  
+9. Outras funcionalidades 
+10. Mão na Massa  
 
 </p>
 </div>
-
-
-
 </div>
+
 
 ---
 <!-- _class: first-slide -->
@@ -80,7 +86,32 @@ updated: 2025-03-03T17:19
 # Overview 
 <div class="linha"></div><br>
 
-O <b>Apache Superset</b> é uma <b>Ferramenta de Business Intelligence (BI)<br>open-source</b> que permite a exploração e visualização de dados de forma iterativa e escalável. 
+O <b>Apache Superset</b> é uma <b>Ferramenta para Business Intelligence (BI)<br>open-source</b> que permite a exploração e visualização de dados de forma iterativa e escalável. 
+
+---
+## <!--- fit ---> Business Intelligence (BI)
+<b><small>Inteligência de Negócios</small></b><br>
+
+![bg right:30%](figs/bi-intro.png)
+
+
+- Conjunto de processos, tecnologias e ferramentas que **coletam, organizam, analisam e visualizam dados**.
+- Transforma dados dispersos em **informações úteis** e insights claros.
+- Facilita decisões estratégicas, operacionais e táticas, permitindo ações rápidas e informadas.
+- Ajuda gestores a entenderem rapidamente **o que está acontecendo e o porquê**.
+
+<br>
+<small>✨ O objetivo é o de apoiar decisões inteligentes e baseadas em fatos <br>✨~<b><u>Data-Driven</u></b>(DWx 2025)!</small>
+
+
+---
+
+## Apache Superset
+
+![center width:2000px](figs/sistema-do-bi-2.png)
+
+<small><center><a href="https://www.techtarget.com/searchbusinessanalytics/definition/business-intelligence-architecture">Adaptado de Yasar & Pratt 2024 (techtaget)
+</a></center></small>
 
 ---
 
@@ -89,7 +120,7 @@ O <b>Apache Superset</b> é uma <b>Ferramenta de Business Intelligence (BI)<br>o
 
 ---
 
-<center>No <b>Apache Superset</b>, a análise e visualização de dados ocorrem a partir de <b>conjuntos de dados estruturados</b> – tabelas organizadas em <b>linhas e colunas</b> – extraídas de bancos de dados <b>SQL compatíveis</b>.</center>
+<center>No <b>Apache Superset</b>, a análise e visualização de dados ocorrem a partir de <b>conjuntos de dados estruturados</b> – tabelas organizadas em <b>linhas e colunas</b> – extraídas de bancos de dados compatíveis com <b>SQL</b>.</center>
 
 <br>
 
@@ -97,17 +128,18 @@ O <b>Apache Superset</b> é uma <b>Ferramenta de Business Intelligence (BI)<br>o
 
 ---
 
-<center><b>Sempre que os datasets são atualizadas na fonte de dados original, o Apache Superset reflete essas mudanças automaticamente</b>, garantindo que os dados sempre atualizados.</center><br>
+<center>Os dados são manipulados e sumarizados para compor <b>visualizações interativas e personalizadas</b>.<br>O <b>Apache Superset</b> oferece <b>mais de 40 tipos de gráficos e visualizações</b>.</center>
+
+![center width:1100px](figs/tabelas-para-graficos.png)
+
+---
+
+<center><b>Quando os datasets são atualizados na fonte original, o Apache Superset reflete essas mudanças de forma automática</b>, garantindo que as visualizações de dados estejam sempre atualizadas.</center><br>
 
 ![center width:1100px](figs/update-data.png)
 
 ---
 
-<center>Os dados das tabelas podem ser manipulados e transformados para compor <b>visualizações interativas e personalizadas</b>.<br>O <b>Apache Superset</b> oferece <b>mais de 40 tipos de gráficos e visualizações</b>.</center>
-
-![center width:1100px](figs/tabelas-para-graficos.png)
-
----
 
 <center>As visualizações geradas podem ser organizadas em <b>dashboards interativos</b>,<br>fornecendo uma visão abrangente dos dados com filtros, indicadores e relatórios dinâmicos.</center> <br> 
 
@@ -122,8 +154,7 @@ O <b>Apache Superset</b> é uma <b>Ferramenta de Business Intelligence (BI)<br>o
 
 ---
 
-![left width:600px](figs/user.png)<br>
-
+![left width:1000px](figs/Pasted%20image%2020250325212046.png)<br>
 *Self-serve analytics* para **todos os níveis de usuários**!<br>Oferece um construtor de visualizações e customizações **sem código**.
 
 ---
@@ -138,83 +169,18 @@ O <b>Apache Superset</b> é uma <b>Ferramenta de Business Intelligence (BI)<br>o
 
 ![center width:1000px](figs/users.png)
 
-<!----
-- O Apache Superset é um projeto de código aberto, o que significa que está disponível gratuitamente para uso e modificação. Isso permite que as organizações personalizem a ferramenta para atender às suas necessidades específicas sem incorrer em custos de licenciamento associados a ferramentas proprietárias de BI (Thomsen & Pedersen, 2005).
-- Sendo de código aberto, ele se beneficia de uma grande comunidade de desenvolvedores e usuários que contribuem para sua melhoria contínua e expansão de recursos(Thomsen & Pedersen, 2009).
----> 
-
----
-<!-- _class: first-slide -->
-![bg](theme/slides-design/12.png)
-
-# História
-<div class="linha"></div><br>
-
-"*The Future of Business Intelligence is Open Source*"
-<small>Maxime Beauchemin (2021)[🔗](https://maximebeauchemin.medium.com/the-future-of-business-intelligence-is-open-source-9b654595773a)</small>
-
----
-
-## *How it start*
-
-![bg right:33%](figs/max-beauchemin2.png)
-
- - 2015 → Criado no Airbnb por **Maxime Beauchemin** 
- - 2017 → Entrou no Apache Incubator
- - 2020 → Top-Level Project (TLP) da Apache Software Foundation
- - 2021 → V1.0, consolidando-se como solução madura de BI
-
-<br> <div style="border: 1px solid #ccc; padding: 15px; padding-left:60px; font-size: 0.7em; background-color: #f8f8f8;"> Maxime criou o **Apache Superset** para superar as limitações do **Tableau** no Airbnb, que não suportava **Presto** e **Druid**, além de ser caro e pouco escalável. O objetivo era desenvolver uma solução **open-source**, flexível e acessível para análise e visualização de dados. [🔗](https://maximebeauchemin.medium.com/the-future-of-business-intelligence-is-open-source-9b654595773a)</div>
-
-
-<!----
-​O **Apache Superset** é uma plataforma de exploração e visualização de dados que teve origem na Airbnb em 2015. Criado por Maxime Beauchemin, também responsável pelo Apache Airflow, o projeto começou como uma iniciativa interna para permitir que os usuários analisassem e visualizassem dados de forma eficiente. ​[medium.com](https://medium.com/%40dblancbellido/unveiling-the-power-of-apache-superset-a-modern-data-exploration-and-visualization-platform-d302a82e5296)[ru.wikipedia.org+6fr.wikipedia.org+6de.wikipedia.org+6](https://fr.wikipedia.org/wiki/Apache_Superset)
-
-Em 2017, o Superset entrou no programa Apache Incubator, marcando o início de sua jornada como um projeto de código aberto sob a égide da Apache Software Foundation (ASF). Durante esse período, empresas como Lyft e Dropbox contribuíram significativamente para o desenvolvimento da ferramenta. ​[ru.wikipedia.org+2en.wikipedia.org+2github.com+2](https://en.wikipedia.org/wiki/Apache_Superset)
-
-Em janeiro de 2021, o Superset alcançou o status de Top-Level Project na ASF, reconhecendo sua maturidade e importância na comunidade de software de código aberto. ​[ru.wikipedia.org+3de.wikipedia.org+3en.wikipedia.org+3](https://de.wikipedia.org/wiki/Apache_Superset)
-
-Atualmente, o Apache Superset é utilizado por diversas empresas líderes no setor de tecnologia, incluindo Airbnb, Lyft e Twitter, destacando-se como uma solução robusta para visualização e exploração de dados em larga escala. ​[preset.io](https://preset.io/about/).
-
-Maxime escreveu em seu blog que os motivos que o levaram a desenvolver o **Apache Superset** foram a necessidade de uma ferramenta open-source de BI que fosse escalável, extensível e capaz de suportar bancos de dados modernos como **Presto e Druid**. Na época, o **Tableau**, que era utilizado no Airbnb, não conseguia atender a esses requisitos, apresentava dificuldades na manipulação de grandes volumes de dados e ainda exigia licenciamento pago, limitando o acesso dos colaboradores. Dessa forma, o **Superset** nasceu para oferecer uma solução flexível, intuitiva e acessível para análise e visualização de dados. 
-
---->
-
----
-## *Same, but different*
-
-✅ **Nativamente compatível com bancos SQL modernos** (Presto, Trino, BigQuery)  
-✅ **Escalável para Big Data**, sem dependência de extrações (Apache Druid) 
-✅ **Livre de limitações de licenciamento** e usuários concorrentes  
-✅ **Cloud-native e flexível**, sem dependência de Windows  
-✅ **Extensível e personalizável**, suportando plugins e integrações
-✅ **Comunidade ativa e crescente** com atualizações frequentes e suporte colaborativo
-
 
 
 ---
-## *How its going*
+### Workflow
 
-1. Se tornou a **plataforma de BI open-source mais popular no mundo**  
-2. **Adotado por milhares de empresas**, incluindo grandes players de tecnologia  
-3. **Liderança em inovação** → Novo roadmap inclui **AI, performance e usabilidade**  
-4. **Maturidade comprovada** → Apache Top-Level Project + versão 4.0 em evolução
-
-<br>
-<div style="border: 1px solid #ccc; padding: 15px; padding-left:60px; font-size: 0.7em; background-color: #f8f8f8;">
-Utilizado por diversas empresas líderes no setor de tecnologia, incluindo Airbnb e X (Twitter),<br>destacando-se como uma solução escalável e de alto desempenho para visualização e<br>exploração de dados em larga escala. 
-</div>
-
+![center width:2000px](figs/estrutura.png)
 
 ---
 
-![bg](figs/dashboard.png)
+### Fonte de dados
 
----
-
-## Databases
-
-![bg right:40% width:700px](figs/database.png)  
+![bg right:36% width:700px](figs/database.png)  
 
 A ferramenta se conecta a diversas fontes de dados compatíveis com **SQL**, incluindo **Presto, Trino, Athena e muitos outros**.  
 <small>
@@ -224,31 +190,73 @@ A ferramenta se conecta a diversas fontes de dados compatíveis com **SQL**, inc
 </small>
 
 
+---
+
+# História
+
+![bg right:33%](figs/max-beauchemin2.png)
+
+ - Projeto de hackathon no Airbnb (2015) cujo objetivo era a criação de uma ferramenta para a visualização de dados em código aberto.
+ - Cresceu rapidamente e superou o Tableau como principal solução de visualização de dados do Airbnb.
+ - Em 2016, Superset tornou-se um projeto de código aberto completo, incubado pela Apache Software Foundation.
+ - Empresas como Airbnb, Lyft e Twitter (X) são usuários corporativos do Superset.
+
+<br> <div style="border: 1px solid #ccc; padding: 15px; padding-left:60px; font-size: 0.7em; background-color: #f8f8f8;"> Maxime criou o **Apache Superset** para superar as limitações do **Tableau** no Airbnb, que não suportava **Presto** e **Druid**, além de ser caro e pouco escalável. O objetivo era desenvolver uma solução **open-source**, flexível e acessível para análise e visualização de dados. [🔗](https://maximebeauchemin.medium.com/the-future-of-business-intelligence-is-open-source-9b654595773a)</div>
 
 
 ---
-## 🛠️ Desenvolvimento  
 
-```{python}
-a = 1 
-print(a)
-```
+<!-- _class: first-slide -->
+![bg](theme/slides-design/12.png)
 
----
-##  Conclusão ou Insight Final  
+# Arquitetura
+<div class="linha"></div><br>
 
-Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum  
+"*The Future of Business Intelligence is Open Source*"
+<small>Maxime Beauchemin (2021)[🔗](https://maximebeauchemin.medium.com/the-future-of-business-intelligence-is-open-source-9b654595773a)</small>
 
 ---
-## 📣 Chamada para Ação (Opcional)  
 
-Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum  
+![](figs/componentes-1.png)
+
 
 
 ---
-### 📥 <br> Referências 
 
-Maxime Beauchemin (2021) - [The Future of Business Intelligence is Open Source](https://maximebeauchemin.medium.com/the-future-of-business-intelligence-is-open-source-9b654595773a). Medium. Acessado em 03 de março de 2025. 
+### Funcionalidades opcionais
+
+Os componentes opcionais - camada de cache - são necessários para ativar as seguintes funcionalidades:
+
+- **Alertas e Relatórios**
+- **Cache**
+- **Consultas Assíncronas**
+- **Miniaturas de Dashboards (Thumbnails)**
+
+<br> <div style="border: 1px solid #ccc; padding: 15px; padding-left:60px; font-size: 0.7em; background-color: #f8f8f8;"> Se você fizer a instalação utilizando Docker Compose ou Kubernets, todos esses componentes serão criados automaticamente.</div>
+
+
+---
+
+<!-- _class: first-slide -->
+![bg](theme/slides-design/12.png)
+
+# A ferramenta
+<div class="linha"></div><br>
+
+"*The Future of Business Intelligence is Open Source*"
+<small>Maxime Beauchemin (2021)[🔗](https://maximebeauchemin.medium.com/the-future-of-business-intelligence-is-open-source-9b654595773a)</small>
+
+---
+
+![center width:1000px](figs/diagram-chatgpt.png)
+
+<center>Made by ChatGPT</center>
+
+---
+
+![bg:20%](figs/menu-explicação.png)
+
+
 
 ---
 <!-- Texto Principal -->

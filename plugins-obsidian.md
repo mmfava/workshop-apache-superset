@@ -1,3 +1,7 @@
+---
+created: 2025-03-03T10:53
+updated: 2025-03-22T20:17
+---
 <!-- ShareMyPlugin begin -->
 
 
@@ -32,7 +36,6 @@
 |[**Share my plugin list**](https://obsidian.md/plugins?id=share-my-plugin-list) [⬇️](obsidian://SP-install?id=share-my-plugin-list&enable=true)|[Benature](https://github.com/Benature) [☕️](https://www.buymeacoffee.com/benature)/[⚡️](https://afdian.net/a/Benature-K)/[♡](https://s2.loli.net/2024/01/30/jQ9fTSyBxvXRoOM.png)|0.3.3|Share the enabled plugins in list/table format.|
 |[**Homepage**](https://obsidian.md/plugins?id=homepage) [⬇️](obsidian://SP-install?id=homepage&enable=true)|[novov](https://novov.me) [♡](https://ko-fi.com/novov)|4.0.7|Open a specified note, canvas, or workspace...|
 |[**Emoji Magic**](https://obsidian.md/plugins?id=emoji-magic) [⬇️](obsidian://SP-install?id=emoji-magic&enable=true)|[simplgy](https://github.com/simplgy)|0.2.2|Easily add emoji, with a powerful keyword...|
-|[**Scholar**](https://obsidian.md/plugins?id=scholar) [⬇️](obsidian://SP-install?id=scholar&enable=true)|[Shannon Shen](https://www.szj.io)|1.4.0|Streamline Research Workflow in Obsidian|
 
 
 <!-- ShareMyPlugin end -->
