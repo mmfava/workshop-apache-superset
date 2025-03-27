@@ -1,4 +1,4 @@
-### 📊 **1. `birth_names`**
+### 📊 **`birth_names`**
 
 **Perguntas de negócio:**
 
@@ -8,7 +8,7 @@
 
 ---
 
-### 🌍 **2. `wb_health_population`**
+### 🌍 **`wb_health_population`**
 
 **Perguntas de negócio:**
 
@@ -16,19 +16,10 @@
 2. Quais países apresentam os maiores crescimentos populacionais nos últimos anos?
 3. Existe correlação entre o crescimento populacional e indicadores de saúde pública?
 
----
-
-### 🔌 **3. `energy_usage`**
-
-**Perguntas de negócio:**
-
-1. Quais fontes de energia são mais utilizadas nos diferentes setores ou edifícios?
-2. Qual é a distribuição de consumo energético entre os tipos de energia ao longo do tempo?
-3. Onde há oportunidades de otimização ou redução no consumo energético?
 
 ---
 
-### ✈️ **4. `flights`**
+### ✈️ **`flights`**
 
 **Perguntas de negócio:**
 
@@ -38,7 +29,7 @@
 
 ---
 
-### 🗺️ **5. `long_lat` (ou `country_map`)**
+### 🗺️ **`long_lat` (ou `country_map`)**
 
 **Perguntas de negócio:**
 

@@ -3,7 +3,7 @@ Quando você instala o Apache Superset pela primeira vez e executa o comando `su
 Esses exemplos são úteis para aprendizado, demonstrações e testes. Abaixo está uma descrição dos principais datasets carregados por padrão:
 
 
-### 📊 **1. `birth_names`**
+### 📊 **`birth_names`**
 
 - **Descrição:** Contém dados fictícios de nomes de bebês registrados nos EUA.
     
@@ -17,7 +17,7 @@ Esses exemplos são úteis para aprendizado, demonstrações e testes. Abaixo es
 
 ---
 
-### 📊 **2. `wb_health_population`**
+### 📊 **`wb_health_population`**
 
 - **Descrição:** Conjunto de dados de saúde e população extraído do Banco Mundial.
     
@@ -32,20 +32,9 @@ Esses exemplos são úteis para aprendizado, demonstrações e testes. Abaixo es
 
 ---
 
-### 📊 **3. `energy_usage`**
-
-- **Descrição:** Dados de consumo de energia em edifícios.
-
-- **Campos principais:**
-    - `source`: Fonte de energia (ex: eletricidade, gás)
-    - `target`: Edifício ou setor
-    - `value`: Consumo energético
-
-- **Uso comum:** Visualização tipo Sankey para entender fluxo de energia.
-
 ---
 
-### 📊 **4. `flights`**
+### 📊 **`flights`**
 
 - **Descrição:** Dados de voos nos EUA, frequentemente usados para mapas e análises de rede.
 
@@ -57,7 +46,7 @@ Esses exemplos são úteis para aprendizado, demonstrações e testes. Abaixo es
 
 ---
 
-### 📊 **5. `long_lat` (ou `country_map`)**
+### 📊 **`long_lat` (ou `country_map`)**
 
 - **Descrição:** Dados com latitude e longitude de países ou locais.
 - **Campos principais:**
