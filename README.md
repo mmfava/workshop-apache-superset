@@ -23,7 +23,7 @@ Este repositório reúne os documentos do curso de Apache Superset, desenvolvido
 
 ### Instalação do Superset
   Consulte os arquivos:
-  1. [`setup/1-instalação.md`](setup/1-instalação.md) para instalar o Superset em Linux
+  1. [`setup/1-instalação.md`](setup/1-Instalação.md) para instalar o Superset em Linux
   2. Usuários Windows devem usar o [`setup/2-WSL`](setup/2-WSL).
   3. Usuários MAC OSX devem usar o [3-macOS](setup/3-macOS.md). 
 
