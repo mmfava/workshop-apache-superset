@@ -155,8 +155,16 @@ O <b>Apache Superset</b> é uma <b>Ferramenta para Business Intelligence (BI)<br
 
 ---
 
+![bg](figs/customizaveis.png)
+
+---
+
 ![left width:1000px](figs/Pasted%20image%2020250325212046.png)<br>
 *Self-serve analytics* para **todos os níveis de usuários**!<br>Oferece um construtor de visualizações e customizações **sem código**.
+
+---
+
+![center width:1500px](figs/sql-easy.png)
 
 ---
 
@@ -179,10 +187,17 @@ O <b>Apache Superset</b> é uma <b>Ferramenta para Business Intelligence (BI)<br
 
 
 ---
+### Menu
+
+![center width:1300px](figs/menu.png)
+
+---
 
 # História
 
 ![bg right:33%](figs/max-beauchemin2.png)
+
+**Max Beauchemin**
 
  - Projeto de hackathon no Airbnb (2015) cujo objetivo era a criação de uma ferramenta para a visualização de dados em código aberto.
  - Cresceu rapidamente e superou o Tableau como principal solução de visualização de dados do Airbnb.
@@ -199,8 +214,7 @@ O <b>Apache Superset</b> é uma <b>Ferramenta para Business Intelligence (BI)<br
 # Arquitetura
 <div class="linha"></div><br>
 
-"Como o Superset é de código aberto e o Airbnb contribui ativamente<br>para o projeto, eles conseguiram turbinar o Superset com componentes internos com relativa facilidade."
-<small>Maxime Beauchemin (2021)[🔗](https://maximebeauchemin.medium.com/the-future-of-business-intelligence-is-open-source-9b654595773a)</small>
+O Apache Superset foi projetado para <b>escalar de forma flexível junto ao seu negócio</b>. E quando você se sentir confiante no básico, há diversas maneiras de explorar ainda mais todo o potencial da ferramenta.
 
 ---
 
@@ -208,31 +222,23 @@ O <b>Apache Superset</b> é uma <b>Ferramenta para Business Intelligence (BI)<br
 
 <center>Uma instalação típica do Superset é composta pelos componentes ilustrados.</center>
 
-<!-----
+---
 
-**1. Web Servers (Gunicorn):**
+### Docker Compose
 
-- O Superset utiliza servidores web Gunicorn para atender requisições dos usuários.
-    
-- Geralmente há vários servidores Gunicorn rodando simultaneamente para distribuir o tráfego e garantir escalabilidade.
+![left width:1400px](figs/containes.png)
 
-### Fluxo Básico de Funcionamento:
+---
 
-1. **Requisição inicial:**
-    
-    - O usuário acessa o Superset através de um navegador.
-    - O servidor web Gunicorn recebe a solicitação e consulta o Metadata DB para autenticação e identificação das permissões do usuário.
+### Vantagens 
 
-2. **Consulta de Dados:**
-    
-    - Após a autenticação, o Gunicorn consulta primeiro o cache (Redis) para verificar se os resultados solicitados já estão armazenados.
-    - Se não houver cache, o Gunicorn realiza consultas diretas ao Data Store (banco externo) e guarda o resultado no cache para futuras consultas.
+► **Escalável:** fácil de crescer, só adicionar mais servidores
+► **Rápido:** usa **Redis (caching)** para acelerar consultas
+► **Robusto:** tarefas pesadas rodam separadas, sem travar o sistema
+► **Conectável:** funciona com vários bancos de dados via SQLAlchemy
 
-3. **Execução Assíncrona (Opcional):**
-    
-    - Algumas requisições que demandam um processamento mais longo são colocadas em uma fila Redis para execução assíncrona.
-    - Workers (Celery) processam estas requisições separadamente e atualizam o resultado após a conclusão.
---->
+Ideal para empresas que precisam de **desempenho** e **crescimento fácil**
+
 
 ---
 
@@ -243,29 +249,27 @@ O <b>Apache Superset</b> é uma <b>Ferramenta para Business Intelligence (BI)<br
 A ferramenta se conecta a diversas fontes de dados compatíveis com **SQL**, incluindo **Presto, Trino, Athena e muitos outros**.  
 <small>
 ✅ Suporte a **bancos relacionais e data warehouses**  
-✅ Compatibilidade depende de **driver Python DB-API**  
-✅ Utiliza **SQLAlchemy** para abstração e integração
+✅ Utiliza **SQLAlchemy** para abstração e integração com diferentes bancos de dados.
 </small>
 
----
+<!-----
+<small>
 
-![center](figs/arquitetura-superset.png)
+✅ **Suporte a bancos relacionais e data warehouses**
 
-<center><a href="https://walkingtree.tech/apache-superset-production-workloads-enterprise-grade-dashboards/">Autora: Abhilasha Sinha (2023) - WalkingTree</a> </center> 
+> O Superset funciona com sistemas de banco de dados transacionais (como PostgreSQL, MySQL, SQL Server) e também com data warehouses e engines de consulta analítica (como BigQuery, Snowflake, Redshift, etc).
 
----
+✅ **Compatibilidade depende de driver Python DB-API**
 
-## Vantagens 
+> Para se conectar a um banco, o Superset precisa que exista um driver Python compatível com o padrão **DB-API 2.0**. Esse driver é o responsável por permitir a comunicação entre o Superset (via Python) e o banco de dados.
 
-- **Escalabilidade horizontal:** permite aumentar a capacidade facilmente adicionando servidores Gunicorn e Workers.
+✅ **Utiliza SQLAlchemy para abstração e integração**
 
-- **Desempenho:** o uso de cache Redis reduz significativamente o tempo de resposta das consultas mais comuns.
+> O SQLAlchemy é uma biblioteca Python que o Superset usa para abstrair a conexão com os diferentes bancos. Assim, o Superset consegue falar com múltiplas bases de dados, sem precisar de código específico para cada uma delas — o SQLAlchemy e os drivers fazem esse trabalho nos bastidores.
 
-- **Resiliência:** tarefas longas não sobrecarregam servidores web, pois são processadas por workers independentes.
+</small>
 
-- **Integração flexível:** conecta-se facilmente a múltiplas fontes de dados usando SQLAlchemy.
-
-> Essa arquitetura torna o Superset uma opção interessante para ambientes empresariais, especialmente onde **performance e escalabilidade** são necessárias. 
+-----> 
 
 ---
 <!-- _class: first-slide -->
@@ -278,121 +282,132 @@ A ferramenta se conecta a diversas fontes de dados compatíveis com **SQL**, inc
 <small>Maxime Beauchemin (2021)[🔗](https://maximebeauchemin.medium.com/the-future-of-business-intelligence-is-open-source-9b654595773a)</small>
 
 ---
-## Controle de Acesso - RBAC
+### RBAC (Role-Based Access Control)
 
-<small>Controle de Acesso Baseado em Funções (RBAC)</small>
+*Controle de acesso baseado em funções*
 
-Mecanismo de segurança que restringe o acesso a recursos com base nas funções dos usuários.
-► Gerencia permissões de usuários com funções personalizáveis.
-► Permissões específicas (ex.: visualizar, executar query).
-► Usuários são atribuídos a funções para controlar níveis de acesso.
+Define **o que o usuário pode ver e fazer**, de acordo com seus **papéis (roles)**.
 
-**Funções Predefinidas**: 
-Admin (acesso total), Alpha (uso avançado), Gamma (acesso básico).
+**Exemplos de permissões:**  
+► Ver dashboards  
+► Editar datasets  
+► Executar SQL  
+► Gerenciar usuários
 
----
-## Single Sign-On (SSO)
-
-Processo de autenticação que permite acesso a múltiplas aplicações com um único login.
-
-► Integração simplificada com provedores OAuth (Google, Okta, Azure, etc.)
-► Autenticação única para maior conveniência dos usuários
-
-**Benefícios**: 
-Redução dos esforços administrativos, simplifica o login e aumenta a segurança corporativa.
-
----
-## Segurança
-
-► Criptografia avançada para dados sensíveis
-► Auditoria detalhada e logs de acessos
-► Suporte para mascaramento de dados
-► Criptografia em trânsito (HTTPS) e em repouso para dados sensíveis.
-► Suporta múltiplos métodos (banco de dados, LDAP, OAuth).
-► RBAC garante controle de acesso granular.
-► Configurável para regulamentações - política de acesso de dados
+**Como funciona**
+- Roles padrão: _Admin_, _Alpha_, _Gamma_
+- Possível criar roles personalizados
+- Usuários podem ter múltiplos roles
 
 ---
 
-## Alertas e Relatórios
+![bg 90%](figs/RBAC2.png)
 
-► Criação automatizada de relatórios periódicos 
-► Notificações via email ou plataformas de mensagem (Slack, Teams)
-► Configuração flexível de gatilhos baseados em consultas SQL
+---
+### RLS (Row-Level Security)
+
+*Segurança em nível de linha*
+
+Restringe **quais dados o usuário pode ver**, aplicando **filtros por linha**.
+
+**Exemplo:**  
+João vê só dados da região **Sudeste**,  
+Maria vê apenas da **Região Sul**.
+```plsql
+WHERE regiao IN ('sul')
+```
+**Como funciona**
+- Filtros criados em _Security > Row Level Security_
+- Associados a datasets e roles
+- Aplicados automaticamente nas queries
 
 ---
 
-## Caching
+### Row Level Security (RLS)
 
-Armazena resultados de consultas para acelerar o carregamento de dashboards.
+Segurança em nível de linha (RLS)
 
-► Armazena em cache resultados de consultas, metadados e dados de visualização.
-► Tempos de expiração e intervalos de atualização configuráveis para balancear desempenho e atualidade.
-
-**Benefício**: 
-Melhora a velocidade para dashboards complexos.
+![](figs/RLS.png)
 
 ---
 
-## Consultas Assíncronas
+### SSO (Single Sign-On)
 
-Executa consultas longas em segundo plano sem bloquear a interface do usuário.<br>
+_Acesso único para múltiplos sistemas_
 
-►  Usa Celery, uma fila de tarefas distribuída, para processamento assíncrono.
-► Suporte a execução de consultas pesadas em segundo plano
-► Gerenciamento eficiente de recursos computacionais
-► Maior estabilidade e performance do sistema
-►  Configurável via configurações de backend do Superset.
+Permite que o usuário **faça login uma única vez** para acessar várias ferramentas (ex: Superset, Slack, Drive).
+
+**Como funciona:**
+► Integração com um provedor de identidade (ex: Google, Azure AD, Okta)
+► Autenticação centralizada e segura
+
+**Vantagens:**  
+Menos senhas, mais segurança  e melhor experiênciass
+
+---
+
+### Alertas e Relatórios
+
+![bg right:46% width:900px](figs/alertas.png)
+► Cria relatórios de forma automática
+► Notificações via email ou Slack
+► Gatilhos com consultas SQL
+
+
+---
+
+## Jinja
+
+_Template para consultas eficientes_
+
+► Variáveis para **parametrizar** filtros
+► **Reutilize** e simplifique consultas SQL  
+► Para análises **iterativas** e **complexas**
+
 <br>
-**Benefício**: 
-Melhora a experiência do usuário para grandes conjuntos de dados.
 
----
-
-## Templates SQL
+![bg right:48% width:900px](figs/Pasted%20image%2020250328211324.png)
 
 ![left width:200px](figs/jinja.png)
 
-Consultas SQL dinâmicas usando modelagem jinja!
-
-► Parametrize consultas com variáveis (ex.: intervalos de datas, filtros).
-Exemplo:  **SELECT \* FROM vendas WHERE data >= {{ data_inicio }}**
-► Reutilização de consultas SQL através de modelos parametrizados
-► Facilidade para criar consultas dinâmicas e flexíveis
-► Maior produtividade na criação e manutenção de dashboards
-
-**Caso de Uso Comum**: 
-Iteração / Análises complexas
 
 ---
+### Grupos
 
-## Rede e Segurança
-
-► Compatibilidade com VPN e ambientes seguros
-
-► Suporte a HTTPS e SSL para comunicação segura
-    
-► Facilidade para implantação em redes corporativas restritas
-
-**Propósito**: 
-Garante implantação segura em ambientes restritos.
+![left width:1200px](figs/Pasted%20image%2020250328212133.png)
 
 
 ---
 
-## Importar/Exportar
+### Importar / Exportar
 
-Importe e exporte configurações do superset e de *assets*. 
+_Migração e versionamento de dados no Superset_
 
-► Facilidade na migração e compartilhamento de dashboards e datasets.
-► Compatibilidade com diversos formatos populares (CSV, Excel, JSON, YALM).
-► Gerenciamento simplificado e ágil do ciclo de vida dos dados. 
-► Importe de uma instância para outra!
-► Versionamento em código. 
+► Compartilhe dashboards e datasets  
+► Suporte a CSV, Excel, JSON, YAML  
+► Migração entre instâncias  
+► Versionamento em código
 
-**Caso de Uso**: 
-Backup, migração, compartilhamento de conexões de banco de dados e versionamento. 
+**Usos comuns:**  
+Backup, migração, compartilhamento e CI/CD
 
+---
+
+![bg:80%](figs/assets.png)
+
+---
+
+### Embed
+
+_Incorpore em outras aplicações_
+
+► Geração de **links embed** 
+► Portais, intranets e aplicações web  
+
+**Exemplos de uso:**  
+Portais corporativos, sistemas internos, relatórios interativos
+
+![bg right width:900px](figs/embed2.png)
 
 ---
 
@@ -401,12 +416,10 @@ Backup, migração, compartilhamento de conexões de banco de dados e versioname
 
 ► Maptools
 ► Handlebars
-► Embed
+► Thumbnails
 ► ...
 
 Consulte a documentação oficial, em configurações!
-
-
 
 
 ---
@@ -460,6 +473,21 @@ A comunidade Apache Superset usa extensivamente o <b>Docker</b> para desenvolvim
 
 "*The Future of Business Intelligence is Open Source*"
 <small>Maxime Beauchemin (2021)[🔗](https://maximebeauchemin.medium.com/the-future-of-business-intelligence-is-open-source-9b654595773a)</small>
+
+---
+
+# Referências
+
+► **Preset (ferramenta baseada em Superset)**  
+    [https://docs.preset.io](https://docs.preset.io/)
+► **Documentação oficial do Apache Superset**  
+    [https://superset.apache.org/docs/](https://superset.apache.org/docs/)
+► **Repositório no GitHub (Apache Superset)**  
+    [https://github.com/apache/superset](https://github.com/apache/superset)
+► **Docker e Docker Compose**  
+    [https://docs.docker.com/engine/install/ubuntu/](https://docs.docker.com/engine/install/ubuntu/)
+► **Artigo do criador do Superset (Max Beauchemin)**  
+    ["The Future of Business Intelligence is Open Source" – Medium](https://maximebeauchemin.medium.com/the-future-of-business-intelligence-is-open-source-9b654595773a)
 
 ---
 <!-- Texto Principal -->

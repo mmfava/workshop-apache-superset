@@ -37,7 +37,6 @@ updated: 2025-03-22T20:17
 |[**Emoji Magic**](https://obsidian.md/plugins?id=emoji-magic) [⬇️](obsidian://SP-install?id=emoji-magic&enable=true)|[simplgy](https://github.com/simplgy)|0.2.2|Easily add emoji, with a powerful keyword...|
 |[**Scholar**](https://obsidian.md/plugins?id=scholar) [⬇️](obsidian://SP-install?id=scholar&enable=true)|[Shannon Shen](https://www.szj.io)|1.4.0|Streamline Research Workflow in Obsidian|
 |[**Magic Mic**](https://obsidian.md/plugins?id=magic-mic) [⬇️](obsidian://SP-install?id=magic-mic&enable=true)|[Drew McDonald](https://github.com/drewmcdonald)|1.0.5|Record, transcribe, and summarize audio directly...|
-|[**YTranscript**](https://obsidian.md/plugins?id=ytranscript) [⬇️](obsidian://SP-install?id=ytranscript&enable=true)|[Łukasz Strzępek](https://github.com/lstrzepek)|1.0.0|This is simple plugin to fetch transcription...|
 
 
 <!-- ShareMyPlugin end -->
