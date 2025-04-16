@@ -256,8 +256,10 @@ FAVICONS = [{"href": "/static/assets/images/certi-favicon.png"}]
 ► **Rápido:** usa **Redis (caching)** para acelerar consultas
 ► **Robusto:** tarefas pesadas rodam separadas, sem travar o sistema
 ► **Conectável:** funciona com vários bancos de dados via SQLAlchemy
+► **Gratuito**: ==Licença Apache 2.0== permite uso comercial sem custos.
+► **Governança**: Conecta com a autenticação de usuários da empresa, como AD e Keycloak.
 
-Ideal para empresas que precisam de **desempenho** e **crescimento fácil**
+Ideal para empresas que precisam de **desempenho** e **crescimento fácil**.
 
 
 ---
