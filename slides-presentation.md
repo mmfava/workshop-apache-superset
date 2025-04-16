@@ -294,6 +294,24 @@ A ferramenta se conecta a diversas fontes de dados compatíveis com **SQL**, inc
 -----> 
 
 ---
+# Instalar os Conectores de Dados
+
+Caso queira instalar um conector que não está na imagem nativa do Superset, é necessário criar um arquivo de dependências (./docker/requirements-local.txt) contendo a versão do instalador.
+
+Passos:
+1. Crie o arquivo ./docker/requirements-local.txt
+2. Adicione os seus pacotes:
+```txt
+trino==352
+```
+3. Reconstrua o docker compose
+```bash
+docker compose down -v
+docker compose up
+```
+
+---
+
 <!-- _class: first-slide -->
 ![bg](theme/slides-design/12.png)
 
