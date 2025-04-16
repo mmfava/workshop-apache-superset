@@ -412,6 +412,55 @@ _Template para consultas eficientes_
 
 
 ---
+# Python nos comandos SQL?
+
+Ele permite a customização de comandos no SQL Lab e Explore usando Jinja Templates, permitindo que você crie funções utilizando Python ou não que sejam convenientes ou mais avançadas para suas queries.
+
+Primeiro é necessário habilitar a flag no superset_config.py:
+
+```python
+FEATURE_FLAGS = {
+    "ENABLE_TEMPLATE_PROCESSING": True,
+}
+```
+
+---
+# Criando a Função Python
+
+Para criar uma função customizada que formata a data de hoje ou uma data qualquer, adicione a estrutura a seguir em seu arquivo superset_config.py.
+
+```python
+from datetime import datetime, timedelta
+from typing import SupportsInt
+
+# Custom function for handling from_dttm
+def time_formatted(default_date=None):
+    """
+    Returns a formatted date string that can be used in SQL queries.
+    Provides a default value when no time filter is applied.
+    """
+    if default_date is None:
+        default_date = datetime.now().strftime('%Y-%m-%d 00:00:00')
+    return default_date
+
+# Add to Jinja context
+JINJA_CONTEXT_ADDONS = {  
+    'time_formatted': time_formatted,
+}
+```
+
+---
+## Utilizando a Função Customizada
+
+Agora você pode utilizar a função dentro de suas consultas SQL:
+
+```sql
+SELECT *
+FROM your_table
+WHERE timestamp_column >= '{{ time_formatted("2025-04-16 00:00:00") }}'
+```
+
+---
 ### Grupos
 
 ![left width:1200px](figs/Pasted%20image%2020250328212133.png)
