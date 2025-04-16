@@ -229,7 +229,27 @@ O Apache Superset foi projetado para <b>escalar de forma flexível junto ao seu 
 ![left width:1400px](figs/containes.png)
 
 ---
+## Configurar Identidade Visual
 
+Você pode por exemplo adicionar o logo da CERTI ou do cliente alterando as configurações para apontar para a logo customizada:
+
+```python
+APP_NAME = "Fundação CERTI"
+APP_ICON = "/static/assets/images/certi-logo.png"
+APP_ICON_WIDTH = 200  # Ajuste o tamanho conforme o necessário
+LOGO_TARGET_PATH = '/' 
+LOGO_TOOLTIP = 'CERTI Painel Sinóptico'
+
+FAVICONS = [{"href": "/static/assets/images/certi-favicon.png"}]
+```
+
+==Garanta que as imagens estão no repositório configurado.==
+
+---
+
+==Slide com superset no estilo CERTI==
+
+---
 ### Vantagens 
 
 ► **Escalável:** fácil de crescer, só adicionar mais servidores
