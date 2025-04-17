@@ -541,13 +541,13 @@ Por exemplo, os **alertas e relatórios automatizados** e as **miniaturas (thumb
 
 ---
 
-## Docker
+## Docker e Kubernetes Deploy
 
-A comunidade Apache Superset usa extensivamente o <b>Docker</b> para desenvolvimento, lançamento e produção do Superset.
-
+A comunidade Apache Superset usa extensivamente o <b>Docker</b> para desenvolvimento do Superset.
+Para a versão de produção é recomendado o uso do **Kubernetes** com o Helm chart disponibilizado.
 <br>
 **Docker-compose**:
-<small>Template para versão de desenvolvimento e para produção.</small>
+<small>Template para versão de desenvolvimento.</small>
 
 ![bg right](figs/docker-compose-vscode.png)
 
