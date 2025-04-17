@@ -213,7 +213,6 @@ O <b>Apache Superset</b> é uma <b>Ferramenta para Business Intelligence (BI)<br
 
 # Arquitetura
 <div class="linha"></div><br>
-
 O Apache Superset foi projetado para <b>escalar de forma flexível junto ao seu negócio</b>. E quando você se sentir confiante no básico, há diversas maneiras de explorar ainda mais todo o potencial da ferramenta.
 
 ---
@@ -231,7 +230,7 @@ O Apache Superset foi projetado para <b>escalar de forma flexível junto ao seu 
 ---
 ## Configurar Identidade Visual
 
-Você pode por exemplo adicionar o logo da CERTI ou do cliente alterando as configurações para apontar para a logo customizada:
+Você pode por exemplo adicionar o logo da CERTI ou do cliente alterando as configurações para apontar para a logo customizada no arquivo docker/pythonpath_dev/superset_config.py. Basta adicionar:
 
 ```python
 APP_NAME = "Fundação CERTI"
@@ -243,11 +242,15 @@ LOGO_TOOLTIP = 'CERTI Painel Sinóptico'
 FAVICONS = [{"href": "/static/assets/images/certi-favicon.png"}]
 ```
 
-==Garanta que as imagens estão no repositório configurado.==
+==Garanta que as imagens estão no repositório configurado. Você pode aplicar volume binding no docker compose para isto.==
 
 ---
+# Configurar Identidade Visual
 
-==Slide com superset no estilo CERTI==
+O resultado será algo como isto:
+
+![left width:1400px](figs/logo-certi.png)
+==Mundaças adicionais nas cores da interface precisam alterar os templates CSS (avançado)==
 
 ---
 ### Vantagens 
