@@ -19,6 +19,7 @@ updated: 2025-03-26T21:08
 # ==Apache Superset==
 
 **Marília Melo Favalesso**
+**Arthur Raulino Kretzer**
 
 ---
 ## <!-- fit --> Marília Melo Favalesso  
@@ -50,6 +51,32 @@ Entusiasta de ferramentas Open-Source 💙
 
 ---
 
+## <!-- fit --> Arthur Raulino Kretzer
+![bg right:33% width:500px](figs/perfil-retangular.jpg)
+
+🎓 Engenheiro de Dados | Mestrando em Ciências da Computação
+
+🎲 Infraestrutura, Dados e Software
+
+✈️ Jogos Digitais, Séries e Viagens nas horas vagas
+<br>
+<small>📧 arthur.raulino.kretzer@gmail.com</small>
+
+<small>🔗 LinkedIn: [/arthurraulinokretzer](https://www.linkedin.com/in/arthurraulinokretzer/)</small>
+
+<small>🔗 github: [/ArthurKretzer](https://github.com/ArthurKretzer)</small>
+
+---
+
+<!-- _class: first-slide -->
+![bg](theme/slides-design/12.png)
+
+# "*Not So Superseter by heart*"
+<div class="linha"></div><br>
+
+Mas também muito entusiasta de ferramentas Open-Source 💙
+
+---
 ## Agenda
 
 <div style="display:grid;grid-template-columns:1fr 1fr">
