@@ -257,16 +257,16 @@ O Apache Superset foi projetado para <b>escalar de forma flexível junto ao seu 
 ---
 ## Configurar Identidade Visual
 
-Você pode por exemplo adicionar o logo da CERTI ou do cliente alterando as configurações para apontar para a logo customizada no arquivo docker/pythonpath_dev/superset_config.py. Basta adicionar:
+Você pode por exemplo adicionar o logo da empresa alterando as configurações para apontar para a logo customizada no arquivo docker/pythonpath_dev/superset_config.py. Basta adicionar:
 
 ```python
-APP_NAME = "Fundação CERTI"
-APP_ICON = "/static/assets/images/certi-logo.png"
+APP_NAME = "Datanauta"
+APP_ICON = "/static/assets/images/datanauta-logo.png"
 APP_ICON_WIDTH = 200  # Ajuste o tamanho conforme o necessário
 LOGO_TARGET_PATH = '/' 
-LOGO_TOOLTIP = 'CERTI Painel Sinóptico'
+LOGO_TOOLTIP = 'Sua bússola no oceano de dados.'
 
-FAVICONS = [{"href": "/static/assets/images/certi-favicon.png"}]
+FAVICONS = [{"href": "/static/assets/images/datanauta-favicon.png"}]
 ```
 
 ==Garanta que as imagens estão no repositório configurado. Você pode aplicar volume binding no docker compose para isto.==
@@ -276,7 +276,7 @@ FAVICONS = [{"href": "/static/assets/images/certi-favicon.png"}]
 
 O resultado será algo como isto:
 
-![left width:1400px](figs/logo-certi.png)
+![left width:1400px](figs/logo-datanauta.png)
 ==Mundaças adicionais nas cores da interface precisam alterar os templates CSS (avançado)==
 
 ---
@@ -322,6 +322,9 @@ A ferramenta se conecta a diversas fontes de dados compatíveis com **SQL**, inc
 </small>
 
 -----> 
+---
+## Conexões com Arquiteturas de Dados
+![left width:1600px](figs/big-data-architectures.png)
 
 ---
 # Instalar os Conectores de Dados
