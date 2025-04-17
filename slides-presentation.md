@@ -369,6 +369,8 @@ Define **o que o usuário pode ver e fazer**, de acordo com seus **papéis (role
 - Possível criar roles personalizados
 - Usuários podem ter múltiplos roles
 
+**Possível conectar com o usuário institucional através de AD ou Keycloak**
+
 ---
 
 ![bg 90%](figs/RBAC2.png)
@@ -568,13 +570,16 @@ Por exemplo, os **alertas e relatórios automatizados** e as **miniaturas (thumb
 
 ---
 
-## Docker e Kubernetes Deploy
+## Deploy
 
 A comunidade Apache Superset usa extensivamente o <b>Docker</b> para desenvolvimento do Superset.
 Para a versão de produção é recomendado o uso do **Kubernetes** com o Helm chart disponibilizado.
 <br>
 **Docker-compose**:
 <small>Template para versão de desenvolvimento.</small>
+
+**Helm Chart**:
+<small>Template para versão de produção.</small>
 
 ![bg right](figs/docker-compose-vscode.png)
 
