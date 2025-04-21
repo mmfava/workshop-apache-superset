@@ -19,6 +19,7 @@ updated: 2025-03-26T21:08
 # ==Apache Superset==
 
 **Marília Melo Favalesso**
+**Arthur Raulino Kretzer**
 
 ---
 ## <!-- fit --> Marília Melo Favalesso  
@@ -50,6 +51,32 @@ Entusiasta de ferramentas Open-Source 💙
 
 ---
 
+## <!-- fit --> Arthur Raulino Kretzer
+![bg right:33% width:500px](figs/perfil-retangular.jpg)
+
+🎓 Engenheiro de Dados | Mestrando em Ciências da Computação
+
+🎲 Infraestrutura, Dados e Software
+
+✈️ Jogos Digitais, Séries e Viagens nas horas vagas
+<br>
+<small>📧 arthur.raulino.kretzer@gmail.com</small>
+
+<small>🔗 LinkedIn: [/arthurraulinokretzer](https://www.linkedin.com/in/arthurraulinokretzer/)</small>
+
+<small>🔗 github: [/ArthurKretzer](https://github.com/ArthurKretzer)</small>
+
+---
+
+<!-- _class: first-slide -->
+![bg](theme/slides-design/12.png)
+
+# "*Not So Superseter by heart*"
+<div class="linha"></div><br>
+
+Mas também muito entusiasta de ferramentas Open-Source 💙
+
+---
 ## Agenda
 
 <div style="display:grid;grid-template-columns:1fr 1fr">
@@ -213,7 +240,6 @@ O <b>Apache Superset</b> é uma <b>Ferramenta para Business Intelligence (BI)<br
 
 # Arquitetura
 <div class="linha"></div><br>
-
 O Apache Superset foi projetado para <b>escalar de forma flexível junto ao seu negócio</b>. E quando você se sentir confiante no básico, há diversas maneiras de explorar ainda mais todo o potencial da ferramenta.
 
 ---
@@ -229,15 +255,41 @@ O Apache Superset foi projetado para <b>escalar de forma flexível junto ao seu 
 ![left width:1400px](figs/containes.png)
 
 ---
+## Configurar Identidade Visual
 
+Você pode por exemplo adicionar o logo da empresa alterando as configurações para apontar para a logo customizada no arquivo docker/pythonpath_dev/superset_config.py. Basta adicionar:
+
+```python
+APP_NAME = "Datanauta"
+APP_ICON = "/static/assets/images/datanauta-logo.png"
+APP_ICON_WIDTH = 200  # Ajuste o tamanho conforme o necessário
+LOGO_TARGET_PATH = '/' 
+LOGO_TOOLTIP = 'Sua bússola no oceano de dados.'
+
+FAVICONS = [{"href": "/static/assets/images/datanauta-favicon.png"}]
+```
+
+==Garanta que as imagens estão no repositório configurado. Você pode aplicar volume binding no docker compose para isto.==
+
+---
+# Configurar Identidade Visual
+
+O resultado será algo como isto:
+
+![left width:1400px](figs/logo-datanauta.png)
+==Mundaças adicionais nas cores da interface precisam alterar os templates CSS (avançado)==
+
+---
 ### Vantagens 
 
 ► **Escalável:** fácil de crescer, só adicionar mais servidores
 ► **Rápido:** usa **Redis (caching)** para acelerar consultas
 ► **Robusto:** tarefas pesadas rodam separadas, sem travar o sistema
 ► **Conectável:** funciona com vários bancos de dados via SQLAlchemy
+► **Gratuito**: ==Licença Apache 2.0== permite uso comercial sem custos.
+► **Governança**: Conecta com a autenticação de usuários da empresa, como AD e Keycloak.
 
-Ideal para empresas que precisam de **desempenho** e **crescimento fácil**
+Ideal para empresas que precisam de **desempenho** e **crescimento fácil**.
 
 
 ---
@@ -270,8 +322,29 @@ A ferramenta se conecta a diversas fontes de dados compatíveis com **SQL**, inc
 </small>
 
 -----> 
+---
+## Conexões com Arquiteturas de Dados
+![left width:1600px](figs/big-data-architectures.png)
 
 ---
+# Instalar os Conectores de Dados
+
+Caso queira instalar um conector que não está na imagem nativa do Superset, é necessário criar um arquivo de dependências (./docker/requirements-local.txt) contendo a versão do instalador.
+
+Passos:
+1. Crie o arquivo ./docker/requirements-local.txt
+2. Adicione os seus pacotes:
+```txt
+trino==352
+```
+3. Reconstrua o docker compose
+```bash
+docker compose down -v
+docker compose up
+```
+
+---
+
 <!-- _class: first-slide -->
 ![bg](theme/slides-design/12.png)
 
@@ -298,6 +371,8 @@ Define **o que o usuário pode ver e fazer**, de acordo com seus **papéis (role
 - Roles padrão: _Admin_, _Alpha_, _Gamma_
 - Possível criar roles personalizados
 - Usuários podem ter múltiplos roles
+
+**Possível conectar com o usuário institucional através de AD ou Keycloak**
 
 ---
 
@@ -370,6 +445,55 @@ _Template para consultas eficientes_
 
 ![left width:200px](figs/jinja.png)
 
+
+---
+# Python nos comandos SQL?
+
+Ele permite a customização de comandos no SQL Lab e Explore usando Jinja Templates, permitindo que você crie funções utilizando Python ou não que sejam convenientes ou mais avançadas para suas queries.
+
+Primeiro é necessário habilitar a flag no superset_config.py:
+
+```python
+FEATURE_FLAGS = {
+    "ENABLE_TEMPLATE_PROCESSING": True,
+}
+```
+
+---
+# Criando a Função Python
+
+Para criar uma função customizada que formata a data de hoje ou uma data qualquer, adicione a estrutura a seguir em seu arquivo superset_config.py.
+
+```python
+from datetime import datetime, timedelta
+from typing import SupportsInt
+
+# Custom function for handling from_dttm
+def time_formatted(default_date=None):
+    """
+    Returns a formatted date string that can be used in SQL queries.
+    Provides a default value when no time filter is applied.
+    """
+    if default_date is None:
+        default_date = datetime.now().strftime('%Y-%m-%d 00:00:00')
+    return default_date
+
+# Add to Jinja context
+JINJA_CONTEXT_ADDONS = {  
+    'time_formatted': time_formatted,
+}
+```
+
+---
+## Utilizando a Função Customizada
+
+Agora você pode utilizar a função dentro de suas consultas SQL:
+
+```sql
+SELECT *
+FROM your_table
+WHERE timestamp_column >= '{{ time_formatted("2025-04-16 00:00:00") }}'
+```
 
 ---
 ### Grupos
@@ -449,13 +573,16 @@ Por exemplo, os **alertas e relatórios automatizados** e as **miniaturas (thumb
 
 ---
 
-## Docker
+## Deploy
 
-A comunidade Apache Superset usa extensivamente o <b>Docker</b> para desenvolvimento, lançamento e produção do Superset.
-
+A comunidade Apache Superset usa extensivamente o <b>Docker</b> para desenvolvimento do Superset.
+Para a versão de produção é recomendado o uso do **Kubernetes** com o Helm chart disponibilizado.
 <br>
 **Docker-compose**:
-<small>Template para versão de desenvolvimento e para produção.</small>
+<small>Template para versão de desenvolvimento.</small>
+
+**Helm Chart**:
+<small>Template para versão de produção.</small>
 
 ![bg right](figs/docker-compose-vscode.png)
 
